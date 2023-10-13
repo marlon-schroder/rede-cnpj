@@ -55,7 +55,7 @@ except:
 
 # rede_relacionamentos.gtabelaTempComPrefixo=False
 
-app = Flask("rede", static_folder="/cnpj-rede/static")
+app = Flask("rede", static_url_path="/cnpj-rede/static", static_folder="static")
 # app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False #pretty print torna jsonify lento
 # app.config['JSON_SORT_KEYS'] = False
 app.config["MAX_CONTENT_PATH"] = 100000000
