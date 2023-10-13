@@ -9,8 +9,8 @@
 <meta name="author" content="https://github.com/rictom/rede-cnpj"/>
 <meta name="google-site-verification" content="6mPFyguPx-3Gmn2rMu4YXAv7BrAJGGDGZl6K0oCOtGg" />
 
-<!-- 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> 
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="viewport" content="width=device-width, user-scalable=no" / -->
 
 <meta property="og:title" content="Rede CNPJ" />
@@ -25,7 +25,7 @@
 <!-- google fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
 
 <style>
 
@@ -80,7 +80,7 @@ text-align: left;
 <!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5410090554067443" crossorigin="anonymous"></script>
 -->
-{% endif %}				 
+{% endif %}
 
 <script>
 
@@ -104,7 +104,7 @@ function main() {
 </script>
 
 </head>
-<body id='corpo'> 
+<body id='corpo'>
 
 <h2 class="blue-text"  style="background-color: #d8f5ff;">{{dadosReferencia.textoH2}}</h2>
 <div class="row">
@@ -118,7 +118,7 @@ function main() {
 		<a href="https://portaldatransparencia.gov.br/download-de-dados" title='Abra a página de Dados Abertos do Portal da Transparência'>Dados Abertos do Portal da CGU</a><br>
 		<a href="https://www.gov.br/imprensanacional/pt-br" title='Abra a página do Diário Oficial da União'>Diário Oficial da União</a><br>
 		<a href="https://github.com/osintbrazuca/osint-brazuca" title='Abra a página no github do projeto Osint Brazuca'>OSINT Brazuca</a><br>
-		<a href="https://dadosabertos.social/" title='Abra a página do Fórum Dados Abertos'>Fórum Dados Abertos</a><br>		
+		<a href="https://dadosabertos.social/" title='Abra a página do Fórum Dados Abertos'>Fórum Dados Abertos</a><br>
 	  </div>
   {% endif %}
   <div class="column middle">
@@ -127,10 +127,10 @@ function main() {
 		{% for dado in listaDados %}
 			<b>CNPJ:</b> <a href="?cnpj={{dado.cnpj_formatado}}">{{dado.cnpj_formatado}}</a>
 			&nbsp;&nbsp;
-			<a href='/rede/grafico/1/{{dado.cnpj}}' target='_blank' title='Abrir Rede CNPJ'><img src="/static/imagem/favicon.ico" alt="Rede" style="width:11px;height:11px;" /></a>
+			<a href='/rede-cnpj/grafico/1/{{dado.cnpj}}' target='_blank' title='Abrir Rede CNPJ'><img src="/static/imagem/favicon.ico" alt="Rede" style="width:11px;height:11px;" /></a>
 			&nbsp;
 			<a onclick='javascript:window.opener.selecionaNoid("{{dado.id}}", false); javascript:window.blur(); javascript:window.opener.focus();' title='Seleciona na Rede de origem'><img src="/static/imagem/hand-o-left.png" alt="Seleciona Item no gráfico" style="width:11px;height:11px;" /></a>
-			<br> 
+			<br>
 			<b>Razão Social:</b> {{dado.razao_social}}<br>
 			<b>Nome Fantasia:</b> {{dado.nome_fantasia}}<br>
 			<b>Matriz/Filial:</b> {{dado.matriz_filial}}<br>
@@ -167,7 +167,7 @@ function main() {
 					   <td>{{d.data_entrada_sociedade[-2:]}}/{{d.data_entrada_sociedade[4:6]}}/{{d.data_entrada_sociedade[:4]}}</td>
 					   <td>{{d.faixa_etaria}}</td>
 					</tr>
-				{% endfor %}			
+				{% endfor %}
 				</table>
 			{% endif %}
 			{% if dado.dado_adicional %}
@@ -179,7 +179,7 @@ function main() {
 			{% endif %}
 			<br><br>
 		{% endfor %}
-	{% else %} 
+	{% else %}
 		{% if dadosReferencia.cnpj %}
 			<b>CNPJ:</b> <a href="?cnpj={{dadosReferencia.cnpj}}">{{dadosReferencia.cnpj}}</a> não foi encontrado!!!<br>
 		{% else %}
@@ -195,10 +195,10 @@ function main() {
 
 		</div>
 	{% endif %}
-	
-	
-		<b>Digite CNPJ(s): </b><input type="text" id="input_cnpj" name="input_cnpj" size="18" value='{{dadosReferencia.cnpj_default}}' 
-			onkeydown = "if (event.keyCode == 13) consulta_cnpj();"   
+
+
+		<b>Digite CNPJ(s): </b><input type="text" id="input_cnpj" name="input_cnpj" size="18" value='{{dadosReferencia.cnpj_default}}'
+			onkeydown = "if (event.keyCode == 13) consulta_cnpj();"
 			title='Digite 1 ou mais CNPJs, separados por espaços ou ponto-e-virgulas. Os CNPJs podem ter pontos, traços ou barras.'
 		>
 		<button type="button" onclick="javascript:consulta_cnpj();" title='Consultar'>Consultar</button><br>
