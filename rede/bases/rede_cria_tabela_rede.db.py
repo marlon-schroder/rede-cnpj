@@ -29,7 +29,7 @@ if bMemoria:
         )
         sys.exit()
 
-hdd = psutil.disk_usage("/var")
+hdd = psutil.disk_usage("./")
 if hdd.free / (2**30) < 20:
     print(
         f"ATENÇÃO. Este script vai criar arquivos do tamanho de aproximadamente 20G, mas há somente {hdd.free/(2**30)} livres no HD. Libere espaço e tente novamente."
